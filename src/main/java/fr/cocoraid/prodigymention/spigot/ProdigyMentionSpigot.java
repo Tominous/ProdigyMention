@@ -50,9 +50,9 @@ public class ProdigyMentionSpigot extends JavaPlugin implements NativeExecutor {
         c.sendMessage(" ");
         c.sendMessage("§2" + "Optional Depencies: ");
         c.sendMessage("§a" + "    - FactionChatAPI: " +  (getServer().getPluginManager().getPlugin("FactionChat")!=null ? "§a✔" : "§4✘"));
-        /*if(getServer().getPluginManager().getPlugin("FactionChat") != null) {
+        if(getServer().getPluginManager().getPlugin("FactionChat") != null) {
 
-        }*/
+        }
 
     }
 
@@ -134,9 +134,9 @@ public class ProdigyMentionSpigot extends JavaPlugin implements NativeExecutor {
 
 
         String finalMessage = message;
-        //transform message into colored message
+        //transform message into coloured message
         if(config.isColoredName) {
-            //String[] words = finalMessage.split("\\W+");
+            String[] words = finalMessage.split("\\W+");
             String[] normal =  Arrays.stream(Lists.transform(targets, HumanEntity::getName).toArray()).toArray(String[]::new);
             String[] colored = Arrays.stream(normal).toArray(String[]::new);
             for (int index =0; index < colored.length; index++){
