@@ -44,7 +44,7 @@ public class ProdigyMentionBungee extends Plugin implements NativeExecutor {
 
 
 
-    /*@Override
+    @Override
     public String mention(UUID sender, String message, boolean isCancelled) {
         ProdigyMentionConfig config = instance.getConfig();
         ProxiedPlayer s = BungeeCord.getInstance().getPlayer(sender);
@@ -65,9 +65,9 @@ public class ProdigyMentionBungee extends Plugin implements NativeExecutor {
 
 
         String finalMessage = message;
-        //transform message into colored message
+        //transform message into coloured message
         if(config.isColoredName) {
-            //String[] words = finalMessage.split("\\W+");
+            String[] words = finalMessage.split("\\W+");
             String[] normal =  Arrays.stream(Lists.transform(targets, CommandSender::getName).toArray()).toArray(String[]::new);
             String[] colored = Arrays.stream(normal).toArray(String[]::new);
             for (int index =0; index < colored.length; index++){
@@ -118,7 +118,7 @@ public class ProdigyMentionBungee extends Plugin implements NativeExecutor {
 
 
         return finalMessage;
-    }*/
+    }
 
     @Override
     public void unregisterAllListeners() {
